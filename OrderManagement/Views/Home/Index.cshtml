@@ -1,0 +1,29 @@
+﻿@model List<OrderManagement.Models.Order>;
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    @foreach(var order in Model)
+    {
+    <div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title"><a class="text-dark" asp-controller="" asp-route-id="@order.Number"></a></h5>
+        <p class="card-text">@order.Date</p>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Элемент</li>
+        <li class="list-group-item">Второй элемент</li>
+        <li class="list-group-item">Третий элемент</li>
+    </ul>
+    <div class="card-body">
+        <a href="#" class="card-link">Ссылка карточки</a>
+        <a href="#" class="card-link">Другая ссылка</a>
+    </div>
+    </div>
+    }
+    <a class="btn btn-info" href="/home/CreateOrder" role="button">Создать заказ</a>
+</div>
